@@ -114,6 +114,46 @@ public final class CollectionUtils {
 
                     try {
 
+                        if(f.get(u11)!=null && f.get(u12)!=null){
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
+                                    f.getGenericType().toString().equals("int")
+                            ) {
+                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                            }
+                        }
+
+
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

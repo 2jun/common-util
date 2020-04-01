@@ -3,6 +3,7 @@ package com.aj.tool.controller;
 import com.aj.tool.core.office.excel.ExportExcel;
 import com.aj.tool.core.office.param.ExeclColumnParam;
 import com.aj.tool.core.office.param.ExeclTableParam;
+import com.aj.tool.core.utils.SecurityMUtils;
 import com.aj.tool.domain.DTO.ShopDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +43,7 @@ public class TestController {
                       @RequestParam("fileName") String fileName,
                       @RequestParam("sheetName") String sheetName) {
 
-        String ip = com.pes.jd.util.SecurityMUtil.getIpAddr(request);
+        String ip = SecurityMUtils.getIpAddr(request);
 //        OutputStream out = null;
         try (OutputStream out = new BufferedOutputStream(response.getOutputStream())) {
             List<ShopDTO> voLst = new ArrayList<>();
