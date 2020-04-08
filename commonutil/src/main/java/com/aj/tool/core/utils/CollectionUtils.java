@@ -2,7 +2,9 @@ package com.aj.tool.core.utils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public final class CollectionUtils {
 
@@ -113,82 +115,74 @@ public final class CollectionUtils {
                     }
 
                     try {
-
-                        if(f.get(u11)!=null && f.get(u12)!=null){
+                        if (f.get(u11) != null && f.get(u12) != null) {
                             if (f.getGenericType().toString().equals("class java.lang.Integer") ||
                                     f.getGenericType().toString().equals("int")
                             ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                                f.set(t, (Integer) f.get(u11) + (Integer) f.get(u12));
                             }
-                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
-                                    f.getGenericType().toString().equals("int")
+                            if (f.getGenericType().toString().equals("class java.lang.Byte") ||
+                                    f.getGenericType().toString().equals("byte")
                             ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                                f.set(t, (Byte) f.get(u11) + (Byte) f.get(u12));
                             }
-                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
-                                    f.getGenericType().toString().equals("int")
+                            if (f.getGenericType().toString().equals("class java.lang.Double") ||
+                                    f.getGenericType().toString().equals("double")
                             ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                                f.set(t, (Double) f.get(u11) + (Double) f.get(u12));
                             }
-                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
-                                    f.getGenericType().toString().equals("int")
+                            if (f.getGenericType().toString().equals("class java.lang.Float") ||
+                                    f.getGenericType().toString().equals("float")
                             ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                                f.set(t, (Float) f.get(u11) + (Float) f.get(u12));
                             }
-                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
-                                    f.getGenericType().toString().equals("int")
+                            if (f.getGenericType().toString().equals("class java.lang.Long") ||
+                                    f.getGenericType().toString().equals("long")
                             ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                                f.set(t, (Long) f.get(u11) + (Long) f.get(u12));
                             }
-                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
-                                    f.getGenericType().toString().equals("int")
+                            if (f.getGenericType().toString().equals("class java.lang.Short") ||
+                                    f.getGenericType().toString().equals("short")
                             ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
-                            }
-                            if (f.getGenericType().toString().equals("class java.lang.Integer") ||
-                                    f.getGenericType().toString().equals("int")
-                            ) {
-                                f.set(t,(Integer)f.get(u11)+(Integer)f.get(u12));
+                                f.set(t, (Short) f.get(u11) + (Short) f.get(u12));
                             }
                         }
-
-
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
                 }
                 return t;
             });
-
         }
         return t;
-
     }
-
 
     public static void main(String[] args) {
-        List<Integer> integers = new ArrayList<>();
-
-        integers.add(1);
-        integers.add(2);
-        integers.add(3);
-        integers.add(4);
-        integers.add(5);
-        integers.add(6);
-        integers.add(7);
-        integers.add(8);
-        integers.add(9);
-        integers.add(10);
-        integers.add(11);
-        integers.add(12);
-        integers.add(13);
-
-        List<List<Integer>> lists = avgAssignLst(integers, 5);
-
-
-        System.out.println(lists);
+        Map<String, Object> map = new HashMap<>();
+        System.out.println(map.get(null));
     }
+
+//    public static void main(String[] args) {
+//        List<Integer> integers = new ArrayList<>();
+//
+//        integers.add(1);
+//        integers.add(2);
+//        integers.add(3);
+//        integers.add(4);
+//        integers.add(5);
+//        integers.add(6);
+//        integers.add(7);
+//        integers.add(8);
+//        integers.add(9);
+//        integers.add(10);
+//        integers.add(11);
+//        integers.add(12);
+//        integers.add(13);
+//
+//        List<List<Integer>> lists = avgAssignLst(integers, 5);
+//
+//
+//        System.out.println(lists);
+//    }
 
 }
