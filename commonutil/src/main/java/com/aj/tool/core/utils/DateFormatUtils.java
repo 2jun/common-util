@@ -226,19 +226,7 @@ public class DateFormatUtils {
 		return calendar.getTime();
 	}
 	
-	public static void main(String[] args) throws ParseException {
-		Date endDate = parseYMdHms("2019-02-20 23:59:59");
-		Date startDate = parseYMdHms("2019-02-13 00:00:00");
-		int a = 10;
-		System.out.println(formatYMdHms(getDateByPeriod(startDate, 11)));;
-		System.out.println(formatYMdHms(endDate));;
-		if(getDateByPeriod(startDate, 10).getTime()<endDate.getTime()){
-			System.out.println(true);
-		}else{
-			System.out.println(false);
-			
-		}
-	}
+
 	
 	/**
 	 * 获取传入时间的开始时间：2015-11-11 00:00:00
@@ -308,4 +296,58 @@ public class DateFormatUtils {
 		calendar.add(Calendar.SECOND, -1);
 		return calendar.getTime();
 	}
+
+    /**
+
+     */
+    /**
+     * 根据最早的开始时间 跟时间节点 ,取最早的开始时间
+     * 开始时间 2020-03-15
+     * 最早开始时间 45天
+     * @param startDate  对比的开始时间
+     * @param date  对比天
+     * @param beforeDateNum 对比天之前的天数
+     * @return
+     */
+    public static Date getEarliestTime(Date startDate, Date date,int beforeDateNum) throws Exception {
+        //开始时间最早
+        Date startTimeOfDate = getStartTimeOfDate(startDate);
+        //当前对比日的时间
+        Date compareOfDate = getStartTimeOfDate(date);
+        //对比日往前推的时间
+        Date dateByPeriod = getDateByPeriod(compareOfDate, -beforeDateNum);
+        if (startTimeOfDate.getTime() >= dateByPeriod.getTime()) {
+            String s = format_yMd_Hms(startTimeOfDate);
+            System.out.println(s);
+            return startTimeOfDate;
+        } else {
+            String s = format_yMd_Hms(dateByPeriod);
+            System.out.println(s);
+            return dateByPeriod;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+//        test();
+        String startDate="2020-04-11";
+        int beforeDateNum=4;
+        System.out.println(getEarliestTime(DateFormatUtils.parseYMd(startDate), new Date(), beforeDateNum));
+
+    }
+
+    private static void test() throws ParseException {
+        Date endDate = parseYMdHms("2019-02-20 23:59:59");
+        Date startDate = parseYMdHms("2019-02-13 00:00:00");
+        int a = 10;
+        System.out.println(formatYMdHms(getDateByPeriod(startDate, 11)));
+        ;
+        System.out.println(formatYMdHms(endDate));
+        ;
+        if(getDateByPeriod(startDate, 10).getTime()<endDate.getTime()){
+            System.out.println(true);
+        }else{
+            System.out.println(false);
+        }
+    }
+
 }
