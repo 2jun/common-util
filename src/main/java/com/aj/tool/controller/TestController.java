@@ -26,9 +26,16 @@ import java.util.List;
  * @date: 2020-04-02  2:07
  */
 @Controller
-@RequestMapping(value = "test")
+@RequestMapping(value = "ai")
 public class TestController {
     private static Logger logger = LoggerFactory.getLogger(TestController.class);
+
+    @RequestMapping(value = "xueping")
+    public Object test1(HttpServletRequest request,String love){
+        System.out.println(request);
+        return "love5/index";
+    }
+
 
     /**
      * 导出报表工具测试
