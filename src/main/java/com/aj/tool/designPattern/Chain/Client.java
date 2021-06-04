@@ -2,7 +2,7 @@ package com.aj.tool.designPattern.Chain;
 
 /**
  * @ClassName: Client
- * @Author: aiJun
+ *
  * @Description: java设计模式-职责链模式
  * 模式导读：
  * 作为一名大学生，相信我们都有过请假的经历，在我们请假是总会碰到这样的场景，就是当请假的时间超过5天（包括5天），

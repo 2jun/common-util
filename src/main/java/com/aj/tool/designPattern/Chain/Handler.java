@@ -2,7 +2,7 @@ package com.aj.tool.designPattern.Chain;
 
 /**
  * @ClassName: Handler
- * @Author: aiJun
+ *
  * @Description: TODO
  * @date: 2020-04-09  0:57
  */

@@ -6,8 +6,7 @@ package com.aj.tool.core.office.param;
  * Function: TODO ADD FUNCTION. <br/>  
  * Reason:   TODO ADD REASON. <br/>  
  * Date:     2018年9月13日 下午4:19:12 <br/>  
- * @author   deru_  
- * @version    
+ * @version
  * @since    JDK 1.8  
  * @see        
  */

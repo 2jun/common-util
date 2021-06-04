@@ -2,10 +2,9 @@ package com.aj.tool;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
-@ServletComponentScan(basePackages = "com.aj.tool.filter")
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class CommonutilApplication {
 
 	public static void main(String[] args) {

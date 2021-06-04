@@ -7,9 +7,11 @@ import com.aj.tool.core.utils.SecurityMUtils;
 import com.aj.tool.domain.DTO.ShopDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,27 +20,45 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 
 /**
  * @ClassName: TestController
- * @Author: aiJun
+ *
  * @Description: TODO
  * @date: 2020-04-02  2:07
  */
 @Controller
-@RequestMapping(value = "ai")
+@RequestMapping(value = "test")
 public class TestController {
     private static Logger logger = LoggerFactory.getLogger(TestController.class);
 
-    @RequestMapping(value = "xueping")
-    public Object test1(HttpServletRequest request,String love){
-        System.out.println(request);
-        return "love5/index";
-    }
+    @Autowired
+    ExecutorService executorService;
 
+    /**
+     *
+     */
+    @RequestMapping("cal")
+    @ResponseBody
+    public Object threadPoolCal(Integer i) {
+        for (int i1 = 0; i1 < i; i1++) {
+            int finalI = i1;
+            executorService.submit(() -> {
+                try {
+                    System.out.println("---->>>>>" + finalI + "-->Thread.currentThread().getName()" + Thread.currentThread().getName());
+//                    Thread.sleep(5000L);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        return "success!";
+    }
 
     /**
      * 导出报表工具测试
+     *
      * @param request
      * @param response
      * @param fileName
