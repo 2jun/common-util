@@ -163,7 +163,7 @@ public class AsyncTaskUtil {
         List<AsyncTask> taskList = new ArrayList<>();
         int task = 0;
         for (String t : lst) {
-            AsyncTask asyncTask = new AsyncTask() {
+            AsyncTask asyncTask = new AsyncTask(task) {
                 @Override
                 public Object run() {
                     //逻辑
