@@ -172,8 +172,8 @@ public class ExportExcel {
 			index = 0;
 		}
 		Row row = sheet.createRow(index);
-		ExeclColumnParam columnParam = null;
-		Cell cell = null;
+		ExeclColumnParam columnParam;
+		Cell cell;
 		for (int i = 0, columnNum = columnParams.size(); i < columnNum; i++) {
 			columnParam = columnParams.get(i);
 			cell = row.createCell(i);
